@@ -1,11 +1,11 @@
 /* Intro
 ############################################################################ */
 .article-intro{
-  padding-top: var(--xxl);
-  color: var(--dark);
-  padding-bottom: var(--xxxl);
   margin-top: var(--xxl);
+  padding-top: var(--xxl);
+  padding-bottom: var(--xxxl);
   font-size: var(--l);
+  color: var(--dark);
   line-height: var(--lh-normal);
 }
 
@@ -22,6 +22,9 @@
 ############################################################################ */
 
 .main-navigation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--color-accent);
 }
 
@@ -77,24 +80,24 @@
   background-color: var(--dark);
 }
 
+.main-navigation__trigger{
+  width: min(calc(var(--m) * 60), 100%);
+}
 
-.main-navigation .trigger:hover{
+.main-navigation__trigger:hover{
   cursor: pointer;
 }
 
-.main-navigation .trigger:focus-within > ul.navbar{
+.main-navigation__trigger:focus-within > ul.navbar{
   display: block;
 }
 
-
-.main-navigation .trigger i{
+.main-navigation__trigger i{
   padding: 0;
   margin: 0;
   display: block;
   margin: var(--xs);
-
 }
-
 
 .main-navigation .navbar{
   display: none;
@@ -171,24 +174,20 @@
 ############################################################################ */
 
 .hero{
-  position: relative;
-  margin-bottom: 0;
+  width: 100%;
+  padding-top: var(--l);
+  padding-bottom: var(--xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 50vh;
 }
 
-.hero .image{
-  margin-bottom: 0;
-}
-
-.hero .image{
-  display: block;
-}
-
-.hero .text{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.hero > *{
+  width: min(calc(var(--m) * 60), 100%);
   padding: var(--m);
 }
 
@@ -197,22 +196,37 @@
 .hero .author{
   line-height: var(--lh-tight);
   text-shadow: var(--shadow-l);
-  margin-bottom: var(--s);
 }
 
 .hero .title{
   font-size: var(--xxl);
   color: var(--color-accent);
-  padding-bottom: 0;
   padding-top: 0;
+  padding-bottom: 0;
 }
 
 .hero .subtitle{
   font-size: var(--xl);
   color: var(--lighter);
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .hero .author{
   color: var(--light);
+}
+
+
+/* Responsive Media
+############################################################################ */
+
+.is-equal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.is-equal img{
+  width: 100%;
+  max-width: calc(var(--m) * 40);
 }

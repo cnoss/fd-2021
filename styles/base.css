@@ -50,10 +50,11 @@ h3{
   margin-bottom: var(--xl);
 }
 
+body > nav.main-navigation{
+  width: 100vw;
+}
 
 body > main, 
-body > nav, 
-body > header,
 body > footer{
   width: min(calc(var(--m) * 60), 100%); /* nimmt den kleinsten Wert der beiden */
   /*width: max(500px, 90%); /* nimmt den größeren Wert der beiden */
@@ -79,14 +80,16 @@ p, blockquote, dd, table{
 }
 
 figure{
-  margin-bottom: var(--xl);
+  margin-bottom: var(--xxl);
 }
 
 figcaption{
   border-bottom: solid var(--border-width-s) var(--darken);
   padding-top: var(--m);
   padding-bottom: var(--l);
+  color: var(--dark);
 }
+
 
 table{
   width: 100%;
