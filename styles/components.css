@@ -1,0 +1,199 @@
+/* Intro
+############################################################################ */
+.article-intro{
+  padding-top: var(--xxl);
+  color: var(--dark);
+  padding-bottom: var(--xxxl);
+  margin-top: var(--xxl);
+  font-size: var(--l);
+  line-height: var(--lh-normal);
+}
+
+.article-intro .headline:after{
+  content: ' ';
+  display: block;
+  width: 50%;
+  margin-top: var(--m);
+  border-top: var(--dark) var(--border-width-m) solid;
+  color: var(--dark);
+}
+
+/* Navigation
+############################################################################ */
+
+.main-navigation{
+  background-color: var(--color-accent);
+}
+
+.main-navigation li{
+  padding: var(--s);
+  transition: background-color var(--tr-fast);
+  font-weight: var(--fw-bold);
+}
+
+.main-navigation ul.navbar > li + li{
+  border-top: solid var(--border-width-s) var(--darken);
+}
+
+.main-navigation li:hover{
+  background-color: var(--darker);
+}
+
+.main-navigation li:hover a{
+  color: var(--lighter);
+}
+
+.main-navigation li a{
+  color: var(--darker);
+  text-decoration: none;
+}
+
+.main-navigation > ul.navbar > li > ul{
+  padding-top: var(--xs);
+  display: none;
+  margin-left: calc(var(--m) * -1);
+}
+
+.main-navigation > ul.navbar > li:focus-within{
+  background-color: var(--darkest);
+}
+
+
+.main-navigation > ul.navbar > li:focus-within a{
+  color: var(--lightest);
+}
+
+.main-navigation > ul.navbar > li:focus-within > ul {
+  display: block;
+}
+
+
+.main-navigation > ul.navbar > li > ul > li {
+  font-weight: var(--fw-normal);
+  padding-left: var(--m);
+}
+
+.main-navigation > ul.navbar > li > ul > li:hover{
+  background-color: var(--dark);
+}
+
+.main-navigation .trigger{
+  margin: var(--xs);
+}
+
+
+/* Kommentare
+############################################################################ */
+#kommentar-hinterlassen{
+  padding: var(--m);
+  background-color:  var(--lighter);
+  font-size: var(--s);
+}
+  
+#kommentar-hinterlassen form label{
+  display: block;
+}
+
+#kommentar-hinterlassen form input[type=radio] + label,
+#kommentar-hinterlassen form input[type=checkbox] + label{
+  display: inline-block;
+}
+  
+#kommentar-hinterlassen form input[type=text],
+#kommentar-hinterlassen form input[type=email],
+#kommentar-hinterlassen form textarea{
+  display: block;
+  width: 100%;
+  padding: var(--xxs);
+}
+
+#kommentar-hinterlassen form textarea{
+  height: var(--xxl);
+}
+
+#kommentar-hinterlassen .headline{
+  font-size: var(--m);
+}
+
+#kommentar-hinterlassen fieldset{
+  margin-bottom: var(--m);
+}
+
+#kommentar-hinterlassen legend{
+  color: var(--dark);
+  margin-top: var(--m);
+  margin-bottom: var(--m);
+}
+
+
+/* Field
+############################################################################ */
+
+.field-with-label{
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: var(--s);
+}
+
+.field{
+  margin-bottom: var(--s);
+}
+
+.field p{
+  margin-bottom: var(--xxs);
+}
+
+.footer-field{
+  padding-top: var(--m);
+  padding-bottom: var(--m);
+}
+
+/* Hero
+############################################################################ */
+
+.hero{
+  position: relative;
+  margin-bottom: 0;
+}
+
+.hero .image{
+  margin-bottom: 0;
+}
+
+.hero .image{
+  display: block;
+}
+
+.hero .text{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--m);
+}
+
+.hero .title,
+.hero .subtitle,
+.hero .author{
+  line-height: var(--lh-tight);
+  text-shadow: var(--shadow-l);
+  margin-bottom: var(--s);
+}
+
+.hero .title{
+  font-size: var(--xxl);
+  color: var(--color-accent);
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.hero .subtitle{
+  font-size: var(--xl);
+  color: var(--lighter);
+  padding: 0;
+}
+
+.hero .author{
+  color: var(--light);
+}
