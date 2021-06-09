@@ -15,11 +15,12 @@ body{
   color: var(--color-text);
   hyphens: auto;
   background-color: var(--lightest);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-main{
-  padding: var(--m);
-}
 
 h1, h2, h3, h4, h5, h6{
   font-weight: bold;
@@ -50,13 +51,17 @@ h3{
 }
 
 
-nav, main, article{
-  margin-bottom: var(--l);
-  max-width: 54rem;
+body > main, 
+body > nav, 
+body > header,
+body > footer{
+  width: min(calc(var(--m) * 60), 100%); /* nimmt den kleinsten Wert der beiden */
+  /*width: max(500px, 90%); /* nimmt den größeren Wert der beiden */
 }
 
-footer{
-  max-width: 54rem;
+body > main{
+  margin-bottom: var(--xxl);
+  padding: var(--m);
 }
 
 img{
@@ -69,8 +74,18 @@ dt{
   margin-bottom: var(--xxs);
 }
 
-figure, p, blockquote, dd, table{
+p, blockquote, dd, table{
   margin-bottom: var(--m);
+}
+
+figure{
+  margin-bottom: var(--xl);
+}
+
+figcaption{
+  border-bottom: solid var(--border-width-s) var(--darken);
+  padding-top: var(--m);
+  padding-bottom: var(--l);
 }
 
 table{
@@ -95,14 +110,16 @@ blockquote{
   border-top: solid 1px var(--light);
   border-bottom: solid 1px var(--light);
   font-family: var(--ff-serif);
-  padding-top: var(--m);
-  padding-bottom: var(--m);
-  margin-top: var(--xl);
-  margin-bottom: var(--xl);
+  padding-top: clamp(var(--xl), calc(5vw + var(--bfs)), var(--xxxl));
+  padding-bottom: clamp(var(--xl), calc(5vw + var(--bfs)), var(--xxxl));
+  margin-top: clamp(var(--xl), calc(5vw + var(--bfs)), 200px);
+  margin-bottom: clamp(var(--xl), calc(5vw + var(--bfs)), 200px);
 }
 
 blockquote p{
   font-style: italic;
+  font-size: clamp(var(--m), calc(2vw + var(--bfs)), var(--xl));
+  line-height: var(--lh-normal);
 }
 
 blockquote p:before,

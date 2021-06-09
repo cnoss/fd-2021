@@ -48,37 +48,56 @@
   text-decoration: none;
 }
 
-.main-navigation > ul.navbar > li > ul{
+.main-navigation ul.navbar > li > ul{
   padding-top: var(--xs);
   display: none;
   margin-left: calc(var(--m) * -1);
 }
 
-.main-navigation > ul.navbar > li:focus-within{
+.main-navigation ul.navbar > li:focus-within{
   background-color: var(--darkest);
 }
 
 
-.main-navigation > ul.navbar > li:focus-within a{
+.main-navigation ul.navbar > li:focus-within a{
   color: var(--lightest);
 }
 
-.main-navigation > ul.navbar > li:focus-within > ul {
+.main-navigation ul.navbar > li:focus-within > ul {
   display: block;
 }
 
 
-.main-navigation > ul.navbar > li > ul > li {
+.main-navigation ul.navbar > li > ul > li {
   font-weight: var(--fw-normal);
   padding-left: var(--m);
 }
 
-.main-navigation > ul.navbar > li > ul > li:hover{
+.main-navigation ul.navbar > li > ul > li:hover{
   background-color: var(--dark);
 }
 
-.main-navigation .trigger{
+
+.main-navigation .trigger:hover{
+  cursor: pointer;
+}
+
+.main-navigation .trigger:focus-within > ul.navbar{
+  display: block;
+}
+
+
+.main-navigation .trigger i{
+  padding: 0;
+  margin: 0;
+  display: block;
   margin: var(--xs);
+
+}
+
+
+.main-navigation .navbar{
+  display: none;
 }
 
 
