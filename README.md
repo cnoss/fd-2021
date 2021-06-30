@@ -10,3 +10,24 @@ Das ist der Startercode für die ersten Sessions im Kurs Frontend-Development. W
 ## Credits 📝
 
 Der Content für diese Aufgabe basiert auf der Bachelorarbeit *Online Sports Comnunities – A concept for supporting the user’s participation in team sports* von Kephas Nguyen (2021) an der TH Köln.
+
+## Ordnerstruktur
+```
+/dist     kompilierter Code … hier wird nix gemacht
+/helper   Helferlein für's Kompilieren
+/src      Quellcode … hier wird entwickelt
+
+```
+## Funktionen
+
+`npm install`
+Installiert die erforderlichen Abhängigkeiten.
+
+`npm run watch`
+Watchmode für den SASS Compiler.
+
+`npm run build` kompiliert einen Build und speichert diesen im `dist` Folder.
+
+`npm run dev` Watchmode für den SASS Compiler und kleiner Webserver, der die Inhalte im `src` Folders serviert.
+
+`npm run live` erzeugt einen Build und startet den Webserver, der die Inhalte im `dev` Folder serviert.

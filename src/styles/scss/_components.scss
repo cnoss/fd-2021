@@ -79,7 +79,8 @@
 }
 
 .main-navigation__trigger {
-  width: min(calc(var(--m) * 60), 100%);
+  width: 100%;
+  max-width: calc(var(--m) * 60);
 }
 
 .main-navigation__trigger:hover {
@@ -214,7 +215,8 @@
 }
 
 .hero > * {
-  width: min(calc(var(--m) * 60), 100%);
+  width: 100%;
+  max-width: calc(var(--m) * 60);
   padding: var(--m);
 }
 
@@ -286,7 +288,8 @@
 }
 
 .content-wrap > main {
-  width: min(calc(var(--m) * 60), 100%);
+  width: 100%;
+  max-width: calc(var(--m) * 60);
   padding: var(--m);
 }
 
