@@ -1,0 +1,28 @@
+{
+  "name": "fd-2021-cnoss",
+  "version": "4.0.0",
+  "description": "Mitlaufendes Projekt für das Modul Frontend Development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "stylelint styles/**/*.css",
+    "lint:fix": "stylelint styles/**/*.css --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnoss/fd-2021.git"
+  },
+  "author": "Christian Noss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cnoss/fd-2021/issues"
+  },
+  "homepage": "https://github.com/cnoss/fd-2021#readme",
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0"
+  }
+}
