@@ -7,21 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "stylelint src/styles/**/*.scss",
     "lint:fix": "stylelint src/styles/**/*.scss --fix",
-
     "dev:css": "node-sass --source-map true src/styles/scss src/styles/scss/main.scss -o src/styles/",
     "watch:sass": "node-sass --source-map true --watch src/styles/scss src/styles/scss/main.scss -o src/styles/",
     "watch": "npm-run-all --parallel dev:css watch:*",
-    
     "build:clean": "npm run clean && npm run mkdirs",
     "build:copy": "npm run copy",
     "build:css": "node-sass --include-path src/styles/scss src/styles/scss/main.scss dist/styles/main.css --output-style compressed",
     "build": "npm run build:clean && npm run build:copy && npm run build:css",
-
     "clean": "rimraf dist",
-    "mkdirs": "npx mkdirp dist/js && npx mkdirp dist/styles && npx mkdirp dist/assets && npx mkdirp dist/images",
-    "copy:assets": "cp -r src/assets/* dist/assets/",
-    "copy:images": "cp -r src/images/* dist/images/",
-    "copy:html": "node helper/copy-html.js .html",
+    "mkdirs": "npx mkdirp dist/styles && npx mkdirp dist/assets && npx mkdirp dist/images",
+    "copy:assets": "copyfiles src/assets/* dist/assets/",
+    "copy:images": "copyfiles src/images/* dist/images/",
+    "copy:html": "copyfiles -u 1 src/**/*.html dist/",
     "copy": "npm run copy:assets && npm run copy:html && npm run copy:images",
     "serve:dev": "npx http-server -c-1 src/",
     "serve:live": "npx http-server dist/",
@@ -39,15 +36,16 @@
   },
   "homepage": "https://github.com/cnoss/fd-2021#readme",
   "devDependencies": {
-    "stylelint": "^13.13.1",
-    "stylelint-config-idiomatic-order": "^8.1.0",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.19.0",
+    "copyfiles": "^2.4.1",
     "findit": "^2.0.0",
     "mkdirp": "^1.0.4",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "sass": "^1.35.1"
+    "sass": "^1.35.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0"
   }
 }
