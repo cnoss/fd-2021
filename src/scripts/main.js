@@ -1,6 +1,5 @@
 const setNavState = () => {
 
-
   const slug = window.location.pathname;
   const navItems = document.querySelectorAll('[data-js-navitem]');
   
@@ -37,8 +36,35 @@ const initDropdowns = () => {
   );
 }
 
+const initScrollSpy = () => {
+
+  let lastActiveItem = false;
+  const menu = document.querySelector('.subnavbar');
+  const sections = document.querySelectorAll('[data-js-scrollspy]');
+
+  const imageObserver = new IntersectionObserver ((entries, observer)=>{
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const pattern = `[href$=${id}]`;
+        const anchor = menu.querySelector(pattern);
+        const menuItem = anchor.closest('.subnavbar__item');
+
+        if (lastActiveItem) { lastActiveItem.removeAttribute("data-state"); }
+        menuItem.setAttribute("data-state", "active");
+        lastActiveItem = menuItem;
+      }
+    });
+  });
+  
+  sections.forEach(function(section) {
+    imageObserver.observe(section);
+  });
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
   initDropdowns();
   setNavState();
+  initScrollSpy();
 });

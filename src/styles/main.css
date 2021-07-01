@@ -254,6 +254,7 @@ tbody tr {
 td,
 th {
   padding: var(--xs);
+  border-bottom: solid var(--border-width-s) var(--light);
   text-align: left; }
 
 thead td,
@@ -364,11 +365,14 @@ blockquote footer::before {
   .subnavbar[data-state=active] {
     display: block; }
   .subnavbar__item {
-    padding: var(--xs);
-    padding-bottom: 0;
-    transition: padding var(--tr-fast); }
+    margin-top: var(--xxs);
+    margin-bottom: var(--xxs);
+    transition: padding var(--tr-fast), border var(--tr-fast); }
     .subnavbar__item:hover {
       padding-left: var(--l); }
+    .subnavbar__item[data-state=active] {
+      padding-left: var(--xxs);
+      border-left: solid var(--border-width-m) var(--color-accent); }
 
 @media only screen and (min-width: 1400px) {
   .main-navigation {

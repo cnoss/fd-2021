@@ -93,12 +93,17 @@
   }
 
   &__item {
-    padding: var(--xs);
-    padding-bottom: 0;
-    transition: padding var(--tr-fast);
+    margin-top: var(--xxs);
+    margin-bottom: var(--xxs);
+    transition: padding var(--tr-fast), border var(--tr-fast);
 
     &:hover {
       padding-left: var(--l);
+    }
+
+    &[data-state=active] {
+      padding-left: var(--xxs);
+      border-left: solid var(--border-width-m) var(--color-accent);
     }
   }
 }

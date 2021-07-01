@@ -99,6 +99,7 @@ tbody tr {
 td,
 th {
   padding: var(--xs);
+  border-bottom: solid var(--border-width-s) var(--light);
   text-align: left;
 }
 
