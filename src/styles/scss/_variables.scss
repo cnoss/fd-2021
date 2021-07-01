@@ -27,9 +27,13 @@
   --lh-normal: 140%;
   --lh-tight: 110%;
   --lh-loose: 150%;
-  --tr-fast: 0.3s;
+  --tr-fast: 0.2s;
   --tr-slow: 0.6s;
   --shadow-l: 0 0 10px rgba(0, 0, 0, 0.5);
   --border-width-s: 1px;
   --border-width-m: 3px;
 }
+
+/* Viewportgrößen für Media Queries
+   Hier greifen Custom Properties nicht. */
+$vp-large: 1400px;

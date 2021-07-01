@@ -3,7 +3,6 @@
   display: inline-block;
   width: auto;
   height: auto;
-  margin-right: var(--xs);
   direction: ltr;
   font-family: var(--ff-icons);
   font-feature-settings: 'liga';
@@ -43,7 +42,7 @@
   &.md-light { color: var(--darkest); }
 
   &--inline {
-    margin-right: 0.4em;
+    margin-right: var(--xs);
     font-size: var(--m);
   }
 
