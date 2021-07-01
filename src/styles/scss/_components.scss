@@ -100,11 +100,6 @@
     &:hover {
       padding-left: var(--l);
     }
-
-    &[data-state=active] {
-      padding-left: var(--xxs);
-      border-left: solid var(--border-width-m) var(--color-accent);
-    }
   }
 }
 
@@ -121,6 +116,15 @@
 
     .menu-trigger {
       display: none;
+    }
+  }
+
+  .subnavbar {
+    &__item {
+      &[data-state=active] {
+        padding-left: var(--xxs);
+        border-left: solid var(--border-width-m) var(--color-accent);
+      }
     }
   }
 }

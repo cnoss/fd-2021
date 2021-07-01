@@ -370,9 +370,6 @@ blockquote footer::before {
     transition: padding var(--tr-fast), border var(--tr-fast); }
     .subnavbar__item:hover {
       padding-left: var(--l); }
-    .subnavbar__item[data-state=active] {
-      padding-left: var(--xxs);
-      border-left: solid var(--border-width-m) var(--color-accent); }
 
 @media only screen and (min-width: 1400px) {
   .main-navigation {
@@ -383,7 +380,10 @@ blockquote footer::before {
     .main-navigation .navbar {
       display: block; }
     .main-navigation .menu-trigger {
-      display: none; } }
+      display: none; }
+  .subnavbar__item[data-state=active] {
+    padding-left: var(--xxs);
+    border-left: solid var(--border-width-m) var(--color-accent); } }
 
 /* Kommentare
 ############################################################################ */
