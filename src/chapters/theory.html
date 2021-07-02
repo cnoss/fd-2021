@@ -28,18 +28,32 @@
 
     <div class="content-wrap">
       <nav class="main-navigation" data-js-nav>
-        <button class="menu-trigger" data-js-dropdown="level-1" data-state="open">
-          <i class="icon icon--xl open">menu</i><i class="icon icon--xl close">close</i>
+        <button
+          class="menu-trigger"
+          data-js-dropdown="level-1"
+          data-state="active"
+        >
+          <i class="icon icon--xl open">menu</i
+          ><i class="icon icon--xl close">close</i>
         </button>
 
-        <ul class="navbar" data-js-dropdown-target="level-1" data-state="hidden">
+        <ul
+          class="navbar"
+          data-js-dropdown-target="level-1"
+          data-state="hidden"
+        >
           <li class="navbar__item" tabindex="1" data-js-navitem>
             <a href="/chapters/introduction.html">Introduction</a>
           </li>
 
-          <li class="navbar__item" tabindex="2" data-js-navitem data-js-dropdown="theory" >
-            <a href="/chapters/theory.html" >Theory</a>
-            <ul class="subnavbar" data-js-dropdown-target="theory" >
+          <li
+            class="navbar__item"
+            tabindex="2"
+            data-js-navitem
+            data-js-dropdown="theory"
+          >
+            <a href="/chapters/theory.html">Theory</a>
+            <ul class="subnavbar" data-js-dropdown-target="theory">
               <li class="subnavbar__item">
                 <a href="/chapters/theory.html#design-principles"
                   >Design Principles</a
@@ -51,11 +65,8 @@
                 >
               </li>
               <li class="subnavbar__item">
-                <a href="/chapters/theory.html#kommentar-hinterlassen"
-                  >Comments</a
-                >
+                <a href="/chapters/theory.html#kommentare">Comments</a>
               </li>
-              
             </ul>
           </li>
 
@@ -582,84 +593,95 @@
           </p>
         </article>
 
-        <footer id="kommentar-hinterlassen" data-js-scrollspy>
-          <h2 class="headline">Ihr Kommentar zum Thema</h2>
-          <form>
-            <fieldset>
-              <legend>Persönliche Daten</legend>
+        <footer id="kommentare" class="comments" data-js-scrollspy>
+          <section>
+            <h2 class="headline">Kommentare zum Thema</h2>
+            <ul data-js-comment-list class="comment-list"></ul>
+          </section>
+          <section>
+            <h3 class="headline">Ihr Kommentar zum Thema</h3>
+            <form>
+              <fieldset>
+                <legend>Persönliche Daten</legend>
+
+                <div class="field-with-label">
+                  <label for="vorname">Vorname</label>
+                  <input
+                    type="text"
+                    id="vorname"
+                    name="vorname"
+                    placeholder="Erika"
+                  />
+                </div>
+
+                <div class="field-with-label">
+                  <label for="nachname">Nachname</label>
+                  <input
+                    type="text"
+                    id="nachname"
+                    name="nachname"
+                    placeholder="Mustermann"
+                  />
+                </div>
+
+                <div class="field-with-label">
+                  <label for="email">E-Mail</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="e.mustermann@web.de"
+                  />
+                </div>
+
+                <div class="field-with-label">
+                  <label for="avatar">Profilbild</label>
+                  <input type="file" id="avatar" name="avatar" />
+                </div>
+              </fieldset>
 
               <div class="field-with-label">
-                <label for="vorname">Vorname</label>
+                <label for="kommentar">Ihr Kommentar</label>
+                <textarea id="kommentar" name="kommentar"></textarea>
+              </div>
+
+              <div class="field">
+                <p>
+                  Soll der Autorenname in einer späteren Anzeige anonymisiert
+                  werden?
+                </p>
                 <input
-                  type="text"
-                  id="vorname"
-                  name="vorname"
-                  placeholder="Erika"
+                  type="radio"
+                  id="ja"
+                  name="anonymisieren"
+                  value="ja"
+                  checked
                 />
-              </div>
+                <label for="ja">ja</label>
 
-              <div class="field-with-label">
-                <label for="nachname">Nachname</label>
                 <input
-                  type="text"
-                  id="nachname"
-                  name="nachname"
-                  placeholder="Mustermann"
+                  type="radio"
+                  id="nein"
+                  name="anonymisieren"
+                  value="nein"
                 />
+                <label for="nein">nein</label>
               </div>
 
-              <div class="field-with-label">
-                <label for="email">E-Mail</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="e.mustermann@web.de"
-                />
+              <div class="field">
+                <p>Haben Sie die Datenschutzerklärung brav gelesen?</p>
+                <input type="checkbox" name="datenschutz" id="datenschutz" />
+                <label for="datenschutz"
+                  >ja, ich habe die Datenschutzerklärung brav gelesen</label
+                >
               </div>
 
-              <div class="field-with-label">
-                <label for="avatar">Profilbild</label>
-                <input type="file" id="avatar" name="avatar" />
+              <div class="footer-field">
+                <input type="reset" value="Daten zurücksetzen" />
+                <input type="submit" value="Kommentar absenden" />
               </div>
-            </fieldset>
-
-            <div class="field-with-label">
-              <label for="kommentar">Ihr Kommentar</label>
-              <textarea id="kommentar" name="kommentar"></textarea>
-            </div>
-
-            <div class="field">
-              <p>
-                Soll der Autorenname in einer späteren Anzeige anonymisiert
-                werden?
-              </p>
-              <input
-                type="radio"
-                id="ja"
-                name="anonymisieren"
-                value="ja"
-                checked
-              />
-              <label for="ja">ja</label>
-
-              <input type="radio" id="nein" name="anonymisieren" value="nein" />
-              <label for="nein">nein</label>
-            </div>
-
-            <div class="field">
-              <p>Haben Sie die Datenschutzerklärung brav gelesen?</p>
-              <input type="checkbox" name="datenschutz" id="datenschutz" />
-              <label for="datenschutz"
-                >ja, ich habe die Datenschutzerklärung brav gelesen</label
-              >
-            </div>
-
-            <div class="footer-field">
-              <input type="reset" value="Daten zurücksetzen" />
-              <input type="submit" value="Kommentar absenden" />
-            </div>
-          </form>
+            </form>
+          </section>
         </footer>
       </main>
     </div>

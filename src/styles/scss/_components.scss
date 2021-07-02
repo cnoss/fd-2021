@@ -131,47 +131,47 @@
 
 /* Kommentare
 ############################################################################ */
-#kommentar-hinterlassen {
+.comments {
   padding: var(--m);
   margin-top: var(--xxxxl);
   background-color: var(--lighter);
   font-size: var(--s);
-}
 
-#kommentar-hinterlassen form label {
-  display: block;
-}
+  label {
+    display: block;
+  }
 
-#kommentar-hinterlassen form input[type="radio"] + label,
-#kommentar-hinterlassen form input[type="checkbox"] + label {
-  display: inline-block;
-}
+  input[type="radio"] + label,
+  input[type="checkbox"] + label {
+    display: inline-block;
+  }
 
-#kommentar-hinterlassen form input[type="text"],
-#kommentar-hinterlassen form input[type="email"],
-#kommentar-hinterlassen form textarea {
-  display: block;
-  width: 100%;
-  padding: var(--xxs);
-}
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    display: block;
+    width: 100%;
+    padding: var(--xxs);
+  }
 
-#kommentar-hinterlassen form textarea {
-  height: var(--xxl);
-}
+  textarea {
+    height: var(--xxl);
+  }
 
-#kommentar-hinterlassen .headline {
-  padding-top: 0;
-  font-size: var(--m);
-}
+  .headline {
+    padding-top: 0;
+    font-size: var(--m);
+  }
 
-#kommentar-hinterlassen fieldset {
-  margin-bottom: var(--m);
-}
+  fieldset {
+    margin-bottom: var(--m);
+  }
 
-#kommentar-hinterlassen legend {
-  margin-top: var(--m);
-  margin-bottom: var(--m);
-  color: var(--dark);
+  legend {
+    margin-top: var(--m);
+    margin-bottom: var(--m);
+    color: var(--dark);
+  }
 }
 
 /* Field
@@ -301,5 +301,39 @@ main {
 
   dl.grid-view dd {
     margin-top: calc(var(--m) * -0.4);
+  }
+}
+
+/* Comment List
+############################################################################ */
+
+.comment-list {
+  &__item {
+    .comment {
+      display: flex;
+      flex-basis: 1;
+      gap: var(--m);
+
+      figcaption {
+        padding-top: 0;
+        margin-bottom: 0;
+      }
+
+      &-title {
+        padding-top: 0;
+        margin-bottom: 0;
+        color: var(--darkest);
+        font-size: var(--m);
+      }
+
+      img {
+        width: 100%;
+        max-width: 100px;
+        height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
   }
 }

@@ -387,40 +387,33 @@ blockquote footer::before {
 
 /* Kommentare
 ############################################################################ */
-#kommentar-hinterlassen {
+.comments {
   padding: var(--m);
   margin-top: var(--xxxxl);
   background-color: var(--lighter);
   font-size: var(--s); }
-
-#kommentar-hinterlassen form label {
-  display: block; }
-
-#kommentar-hinterlassen form input[type="radio"] + label,
-#kommentar-hinterlassen form input[type="checkbox"] + label {
-  display: inline-block; }
-
-#kommentar-hinterlassen form input[type="text"],
-#kommentar-hinterlassen form input[type="email"],
-#kommentar-hinterlassen form textarea {
-  display: block;
-  width: 100%;
-  padding: var(--xxs); }
-
-#kommentar-hinterlassen form textarea {
-  height: var(--xxl); }
-
-#kommentar-hinterlassen .headline {
-  padding-top: 0;
-  font-size: var(--m); }
-
-#kommentar-hinterlassen fieldset {
-  margin-bottom: var(--m); }
-
-#kommentar-hinterlassen legend {
-  margin-top: var(--m);
-  margin-bottom: var(--m);
-  color: var(--dark); }
+  .comments label {
+    display: block; }
+  .comments input[type="radio"] + label,
+  .comments input[type="checkbox"] + label {
+    display: inline-block; }
+  .comments input[type="text"],
+  .comments input[type="email"],
+  .comments textarea {
+    display: block;
+    width: 100%;
+    padding: var(--xxs); }
+  .comments textarea {
+    height: var(--xxl); }
+  .comments .headline {
+    padding-top: 0;
+    font-size: var(--m); }
+  .comments fieldset {
+    margin-bottom: var(--m); }
+  .comments legend {
+    margin-top: var(--m);
+    margin-bottom: var(--m);
+    color: var(--dark); }
 
 /* Field
 ############################################################################ */
@@ -523,5 +516,27 @@ main {
     font-weight: var(--fw-medium); }
   dl.grid-view dd {
     margin-top: calc(var(--m) * -0.4); } }
+
+/* Comment List
+############################################################################ */
+.comment-list__item .comment {
+  display: flex;
+  flex-basis: 1;
+  gap: var(--m); }
+  .comment-list__item .comment figcaption {
+    padding-top: 0;
+    margin-bottom: 0; }
+  .comment-list__item .comment-title {
+    padding-top: 0;
+    margin-bottom: 0;
+    color: var(--darkest);
+    font-size: var(--m); }
+  .comment-list__item .comment img {
+    width: 100%;
+    max-width: 100px;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover; }
 
 /*# sourceMappingURL=main.css.map */
