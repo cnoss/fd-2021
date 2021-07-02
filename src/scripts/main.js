@@ -5,13 +5,13 @@ const setNavState = () => {
   
   navItems.forEach(item => {
     const anchor = item.querySelector('[href]');
-
+    console.log(slug, anchor);
     if (!anchor.href.match(slug)) return;
     item.setAttribute("data-state", "active");
 
     if (!item.querySelector('.subnavbar')) return;
     item.querySelector('.subnavbar').setAttribute("data-state", "active");
-    //}
+    
   });
   return;
 }
