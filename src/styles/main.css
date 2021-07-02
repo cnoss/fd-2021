@@ -346,17 +346,17 @@ blockquote footer::before {
   .menu-trigger .close,
   .menu-trigger .open {
     overflow: hidden; }
-  .menu-trigger[data-state=open] {
+  .menu-trigger[data-state=active] {
     transform: rotate(0deg); }
-    .menu-trigger[data-state=open] .close {
+    .menu-trigger[data-state=active] .close {
       width: 0; }
-    .menu-trigger[data-state=open] .open {
+    .menu-trigger[data-state=active] .open {
       width: var(--xl); }
-  .menu-trigger[data-state=close] {
+  .menu-trigger[data-state=closed] {
     transform: rotate(90deg); }
-    .menu-trigger[data-state=close] .close {
+    .menu-trigger[data-state=closed] .close {
       width: var(--xl); }
-    .menu-trigger[data-state=close] .open {
+    .menu-trigger[data-state=closed] .open {
       width: 0; }
 
 .subnavbar {

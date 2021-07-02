@@ -71,13 +71,13 @@
     overflow: hidden;
   }
 
-  &[data-state=open] {
+  &[data-state=active] {
     transform: rotate(0deg);
     .close { width: 0; }
     .open { width: var(--xl); }
   }
 
-  &[data-state=close] {
+  &[data-state=closed] {
     transform: rotate(90deg);
     .close { width: var(--xl); }
     .open { width: 0; }
