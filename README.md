@@ -31,3 +31,11 @@ Watchmode für den SASS Compiler.
 `npm run dev` Watchmode für den SASS Compiler und kleiner Webserver, der die Inhalte im `src` Folders serviert.
 
 `npm run live` erzeugt einen Build und startet den Webserver, der die Inhalte im `dev` Folder serviert.
+
+`npm run lint:css` startet stylelint.
+
+`npm run lint:css:fix` startet stylelint und korrigiert die Fehler, sofern möglich.
+
+`npm run lint:js` startet eslint.
+
+`npm run lint:js:fix` startet eslint und korrigiert die Fehler, sofern möglich.

@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "stylelint src/styles/**/*.scss",
-    "lint:fix": "stylelint src/styles/**/*.scss --fix",
+    "lint:css": "stylelint src/styles/**/*.scss",
+    "lint:css:fix": "stylelint src/styles/**/*.scss --fix",
+    "lint:js": "eslint src/scripts/**/*.js",
+    "lint:js:fix": "eslint src/scripts/**/*.js --fix",
     "dev:css": "node-sass --source-map true src/styles/scss src/styles/scss/main.scss -o src/styles/",
     "watch:sass": "node-sass --source-map true --watch src/styles/scss src/styles/scss/main.scss -o src/styles/",
     "watch": "npm-run-all --parallel dev:css watch:*",
@@ -37,6 +39,9 @@
   "homepage": "https://github.com/cnoss/fd-2021#readme",
   "devDependencies": {
     "copyfiles": "^2.4.1",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
     "findit": "^2.0.0",
     "mkdirp": "^1.0.4",
     "npm-run-all": "^4.1.5",
