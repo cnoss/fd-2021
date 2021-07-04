@@ -4,28 +4,28 @@
   "description": "Mitlaufendes Projekt für das Modul Frontend Development",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:css": "stylelint src/styles/**/*.scss",
-    "lint:css:fix": "stylelint src/styles/**/*.scss --fix",
+  
+    "lint:css": "stylelint src/assets/styles/**/*.scss",
+    "lint:css:fix": "stylelint src/assets/styles/**/*.scss --fix",
     "lint:js": "eslint src/scripts/**/*.js",
     "lint:js:fix": "eslint src/scripts/**/*.js --fix",
-    "dev:css": "node-sass --source-map true src/styles/scss src/styles/scss/main.scss -o src/styles/",
-    "watch:sass": "node-sass --source-map true --watch src/styles/scss src/styles/scss/main.scss -o src/styles/",
+
+    "dev:css": "node-sass --source-map true src/assets/styles/scss src/assets/styles/scss/main.scss -o src/assets/styles/",
+    "watch:sass": "node-sass --source-map true --watch src/assets/styles/scss src/assets/styles/scss/main.scss -o src/compiled-assets/",
     "watch": "npm-run-all --parallel dev:css watch:*",
-    "build:clean": "npm run clean && npm run mkdirs",
-    "build:copy": "npm run copy",
-    "build:css": "node-sass --include-path src/styles/scss src/styles/scss/main.scss dist/styles/main.css --output-style compressed",
-    "build": "npm run build:clean && npm run build:copy && npm run build:css",
-    "clean": "rimraf dist",
-    "mkdirs": "npx mkdirp dist/styles && npx mkdirp dist/assets && npx mkdirp dist/images",
-    "copy:assets": "copyfiles src/assets/* dist/assets/",
-    "copy:images": "copyfiles src/images/* dist/images/",
-    "copy:html": "copyfiles -u 1 src/**/*.html dist/",
-    "copy": "npm run copy:assets && npm run copy:html && npm run copy:images",
-    "serve:dev": "npx http-server -c-1 src/",
-    "serve:live": "npx http-server dist/",
-    "dev": "npm-run-all --parallel watch serve:dev",
-    "live": "npm run build && npm run serve:live"
+    "build:css": "node-sass --include-path src/assets/styles/scss src/assets/styles/scss/main.scss src/compiled-assets/main.css --output-style compressed",
+    "build:site": "ELEVENTY_ENV=production npx eleventy",
+    
+    "del:docs": "rimraf ./docs",
+    "del:assets": "rimraf ./src/compiled-assets",
+
+    "serve:11ty": "ELEVENTY_ENV=development npx eleventy --serve",
+    "serve:prod": "serve ./docs/",
+
+    "dev": "npm-run-all --parallel watch serve:11ty",
+    "build": "npm-run-all del:docs del:assets build:css build:site",
+    "live": "npm run build && npm run serve:prod"
+    
   },
   "repository": {
     "type": "git",
@@ -38,12 +38,12 @@
   },
   "homepage": "https://github.com/cnoss/fd-2021#readme",
   "devDependencies": {
-    "copyfiles": "^2.4.1",
+    "@11ty/eleventy": "^0.12.1",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
-    "findit": "^2.0.0",
-    "mkdirp": "^1.0.4",
+    "html-minifier": "^4.0.0",
+    "md5-file": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "sass": "^1.35.1",
