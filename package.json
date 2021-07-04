@@ -22,7 +22,7 @@
     "copy:images": "copyfiles src/images/* dist/images/",
     "copy:html": "copyfiles -u 1 src/**/*.html dist/",
     "copy": "npm run copy:assets && npm run copy:html && npm run copy:images",
-    "serve:dev": "npx http-server -c-1 src/",
+    "serve:dev": "browser-sync start --server 'src' --files 'src' --directory",
     "serve:live": "npx http-server dist/",
     "dev": "npm-run-all --parallel watch serve:dev",
     "live": "npm run build && npm run serve:live"
@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/cnoss/fd-2021#readme",
   "devDependencies": {
+    "browser-sync": "^2.27.4",
     "copyfiles": "^2.4.1",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
