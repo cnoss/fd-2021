@@ -3,5 +3,7 @@
       "source.fixAll.stylelint": true,
       "source.fixAll.eslint": true
   },
-  "eslint.validate": ["javascript"]
+  "eslint.validate": ["javascript"],
+  "cssVarriablesAutocomplete.files": [ "_variables.scss" ],
+  "cssVarriablesAutocomplete.languageModes": [ "scss", "css", "sass" ],
 }
