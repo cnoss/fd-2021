@@ -28,7 +28,7 @@ Watchmode für den SASS Compiler.
 
 `npm run build` kompiliert einen Build und speichert diesen im `dist` Folder.
 
-`npm run dev` Watchmode für den SASS Compiler und kleiner Webserver, der die Inhalte im `src` Folders serviert.
+`npm run dev` Watchmode für den SASS Compiler und Browsersync, der die Inhalte im `src` Folder, inkl. livereload, serviert.
 
 `npm run live` erzeugt einen Build und startet den Webserver, der die Inhalte im `dev` Folder serviert.
 
