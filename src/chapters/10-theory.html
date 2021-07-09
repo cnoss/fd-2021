@@ -481,6 +481,11 @@ layout: default.njk
   <section>
     <h2 class="headline" data-js-linktext>Kommentare zum Thema</h2>
     <ul data-js-comment-list class="comment-list"></ul>
+    <ul id="commentList">
+    {% raw %}
+    {{ message }}
+    {% endraw %}
+    </ul>
   </section>
   <section>
     <h3 class="headline">Ihr Kommentar zum Thema</h3>

@@ -4,17 +4,34 @@ export default class Comments {
     this.target = document.querySelector('[data-js-comment-list]');
   }
 
-  init() {
-    if (this.target) {
-      fetch(this.url)
-        .then((data) => data.json())
-        .then((data) => {
-          this.renderData(data);
-        })
-        .catch((error) => {
-          this.renderError(error);
-        });
+  async fetchData() {
+    try {
+      const response = await fetch(this.url);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error(e);
     }
+
+    return true;
+  }
+
+  async init() {
+    if (this.target) {
+      const data = await this.fetchData();
+      if (data) {
+        this.renderData(data);
+      } else {
+        // eslint-disable-next-line no-console
+        console.error('Fehler beim Erzeugen der Kommentare.');
+      }
+    }
+    return true;
   }
 
   renderError(error) {

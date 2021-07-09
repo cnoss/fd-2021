@@ -11,8 +11,9 @@
       type="image/png"
       href="/assets/images/outline_face_black_24dp.png"
     />
-    <link rel="stylesheet" href="/assets/main.css?1625826027505" />
-    <script type="module" src="/assets/scripts/main.js?1625826027505"></script>
+    <link rel="stylesheet" href="/assets/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="module" src="/assets/scripts/main.js"></script>
   </head>
   <body>
     <header
@@ -530,6 +531,11 @@
   <section>
     <h2 class="headline" data-js-linktext>Kommentare zum Thema</h2>
     <ul data-js-comment-list class="comment-list"></ul>
+    <ul id="commentList">
+    
+    {{ message }}
+    
+    </ul>
   </section>
   <section>
     <h3 class="headline">Ihr Kommentar zum Thema</h3>
