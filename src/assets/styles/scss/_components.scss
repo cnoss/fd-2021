@@ -266,6 +266,9 @@
 
 /* Content Wrap
 ############################################################################ */
+.content-wrap {
+  flex-grow: 2;
+}
 
 @media only screen and (min-width: $vp-large) {
   .content-wrap {
@@ -335,5 +338,31 @@ main {
         object-fit: cover;
       }
     }
+  }
+}
+
+
+/* Cards & Cards Overview
+############################################################################ */
+
+.card {
+  &-overview {
+    display: grid;
+    gap: var(--m);
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+
+  &-image {
+    padding-bottom: var(--xxs);
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  &-title,
+  &-subtitle {
+    padding: 0;
+    margin: 0;
+    font-size: var(--m);
+    line-height: var(--lh-normal);
   }
 }

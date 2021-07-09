@@ -177,9 +177,6 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: var(--lightest);
   color: var(--color-text);
   font-family: var(--ff-normal);
@@ -490,6 +487,9 @@ blockquote footer::before {
 
 /* Content Wrap
 ############################################################################ */
+.content-wrap {
+  flex-grow: 2; }
+
 @media only screen and (min-width: 1400px) {
   .content-wrap {
     display: grid;
@@ -538,5 +538,23 @@ main {
     aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover; }
+
+/* Cards & Cards Overview
+############################################################################ */
+.card-overview {
+  display: grid;
+  gap: var(--m);
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
+
+.card-image {
+  padding-bottom: var(--xxs);
+  aspect-ratio: 1/1;
+  object-fit: cover; }
+
+.card-title, .card-subtitle {
+  padding: 0;
+  margin: 0;
+  font-size: var(--m);
+  line-height: var(--lh-normal); }
 
 /*# sourceMappingURL=main.css.map */
