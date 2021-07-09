@@ -6,9 +6,9 @@
 
   <ul class="navbar" data-js-dropdown-target="level-1" data-state="hidden">
 
-    {%- for post in collections.chapters -%}
+    {%- for chapter in collections.chapters -%}
        <li class="navbar__item" data-js-navitem>
-        <a href="{{ post.url }}">{{post.data.title}}</a></li>
+        <a href="{{ chapter.url }}">{{chapter.data.title}}</a></li>
       </li>
     {%- endfor -%}
 
