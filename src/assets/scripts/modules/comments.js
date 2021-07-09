@@ -1,3 +1,6 @@
+/* eslint-disable import/extensions */
+import fetchData from './fetchData.js';
+
 export default class Comments {
   constructor(url) {
     this.url = url;
@@ -23,7 +26,7 @@ export default class Comments {
 
   async init() {
     if (this.target) {
-      const data = await this.fetchData();
+      const data = await fetchData(this.url);
       if (data) {
         this.renderData(data);
       } else {
