@@ -531,9 +531,19 @@
   <section>
     <h2 class="headline" data-js-linktext>Kommentare zum Thema</h2>
     <ul data-js-comment-list class="comment-list"></ul>
-    <ul id="commentList">
+
+    <h2 class="headline" data-js-linktext>Kommentare zum Thema(via Vue.js)</h2>
+    <ul id="commentList" class="comment-list">
     
-    {{ message }}
+      <li class="comment-list__item" v-for="comment in comments">
+        <figure class="comment">
+          <img v-bind:src="'https://mi-classroom.github.io/fd-2021-content/js-session-2/avatars/' + comment.avatar" > 
+          <figcaption>
+            <h3 class="comment-title">{{comment.firstname}} {{comment.lastname}}, {{comment.date}}</h3>
+            <p class="comment-body">{{comment.comment}}</p>
+          </figcaption>
+        </figure>
+      </li>
     
     </ul>
   </section>
