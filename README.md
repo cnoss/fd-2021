@@ -17,13 +17,13 @@ kompilierter Code … hier wird nix gemacht
 ### `/src` hier wird entwickelt
 
 ```
-_components         Layout- oder Funktionsschnipsel
-_data               Zusätzliche Daten oder Hilffunktionen
-_layouts            Templates
-assets              SCSS, Skripts, Fonts, etc … alles was kein Content ist
-compiled-assets     Kompilierte Dateien, z.B. CSS
-chapters            Content
-images              Bilder, die zum Content gehören
+_data/              Zusätzliche Daten oder Hilffunktionen
+_layouts/           Templates
+  partials/         Layout- oder Funktionsschnipsel
+assets/             SCSS, Skripts, Fonts, etc … alles was kein Content ist
+compiled-assets/    Kompilierte Dateien, z.B. CSS
+chapters/           Content
+images/             Bilder, die zum Content gehören
 index.md            Startseite
 ```
 
