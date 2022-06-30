@@ -8,9 +8,8 @@ export default class ScrollSpy {
   init() {
     const imageObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.refreshNavigation(entry);
-        }
+        if (!entry.isIntersecting) return;
+        this.refreshNavigation(entry);
       });
     });
 
