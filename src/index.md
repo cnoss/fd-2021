@@ -1,6 +1,6 @@
 ---
 title: Overview
-layout: default.njk
+layout: default.11ty.js
 ---
 
 # Dankeschön

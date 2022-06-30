@@ -1,5 +1,13 @@
 const htmlmin = require('html-minifier');
 
+const clearRequireCache = () => {
+  
+  Object.keys(require.cache).forEach(function (key) {
+    if (require.cache[key].filename.match(/11ty\.js/)) {
+      delete require.cache[key];
+    }
+  });  
+}
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
@@ -58,9 +66,8 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      includes: '_components',
       input: 'src',
-      layouts: '_layouts',
+      layouts: '_templates',
       output: 'docs',
     },
     pathPrefix: "",
@@ -69,6 +76,7 @@ module.exports = function (eleventyConfig) {
     templateFormats: [
       'md',
       'html',
+      '11ty.js',
       'njk'
     ],
   };
